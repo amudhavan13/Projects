@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hospital Details</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for hospital image */
+        #hospitalImage {
+            max-width: 200px; /* Adjust the max-width as needed */
+            height: auto;
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid py-2 border-bottom d-none d-lg-block">
+        <div class="container">
+            <!-- Header content here -->
+        </div>
+    </div>
+    <div class="container-fluid sticky-top bg-white shadow-sm mb-5">
+        <div class="container">
+            <!-- Navigation bar content here -->
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="bg-light text-center rounded p-5">
+                        <!-- Hospital details section -->
+                        <div id="hospitalDetails">
+                            <!-- Hospital details will be populated dynamically here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button and JavaScript imports -->
+
+    <script>
+        // Function to load hospital details based on selection
+        window.onload = function () {
+            loadHospitalDetails();
+        };
+
+        // Function to load hospital details
+        function loadHospitalDetails() {
+            // Sample data (replace with actual data)
+            const hospitalData = {
+                "Apollo Hospital": {
+                    image: "https://www.apolloinformationcentre.com/wp-content/uploads/2019/07/int-hdr-apollo-hospital-1.jpg",
+                    specialization: ["Cardiology", "Neurology", "Orthopedics"],
+                    doctors: [
+                        {
+                            name: "Dr. John Doe",
+                            experience: "10 years",
+                            education: "MBBS, MD",
+                            areaOfSpecialization: "Cardiology",
+                            patientsAttended: 5000,
+                            workingHours: "9 AM - 5 PM",
+                            rating: 4.5
+                        },
+                        {
+                            name: "Dr. Jane Smith",
+                            experience: "8 years",
+                            education: "MBBS, MS",
+                            areaOfSpecialization: "Orthopedics",
+                            patientsAttended: 3000,
+                            workingHours: "10 AM - 6 PM",
+                            rating: 4.2
+                        }
+                    ]
+                },
+                "Fortis Hospital": {
+                    image: "https://www.fortishealthcare.com/drupal-data/styles/details_banner_1456_320/azblob/2023-03/hospital%20buidling%20web_1_0.jpg?itok=StEORSBW",
+                    specialization: ["Cardiology", "Neurology", "Orthopedics"],
+                    doctors: [
+                        {
+                            name: "Dr. John Doe",
+                            experience: "10 years",
+                            education: "MBBS, MD",
+                            areaOfSpecialization: "Cardiology",
+                            patientsAttended: 5000,
+                            workingHours: "9 AM - 5 PM",
+                            rating: 4.5
+                        },
+                        {
+                            name: "Dr. Jane Smith",
+                            experience: "8 years",
+                            education: "MBBS, MS",
+                            areaOfSpecialization: "Orthopedics",
+                            patientsAttended: 3000,
+                            workingHours: "10 AM - 6 PM",
+                            rating: 4.2
+                        }
+                    ]
+                },
+                "Ganga Hospital": {
+                    image: "https://images.jdmagicbox.com/comp/coimbatore/c2/0422px422.x422.181117162755.f7c2/catalogue/ganga-hospital-coimbatore-coimbatore-cleft-lip-and-palate-treatment-8xg23ug23u.jpg",
+                    specialization: ["Cardiology", "Neurology", "Orthopedics"],
+                    doctors: [
+                        {
+                            name: "Dr. John Doe",
+                            experience: "10 years",
+                            education: "MBBS, MD",
+                            areaOfSpecialization: "Cardiology",
+                            patientsAttended: 5000,
+                            workingHours: "9 AM - 5 PM",
+                            rating: 4.5
+                        },
+                        {
+                            name: "Dr. Jane Smith",
+                            experience: "8 years",
+                            education: "MBBS, MS",
+                            areaOfSpecialization: "Orthopedics",
+                            patientsAttended: 3000,
+                            workingHours: "10 AM - 6 PM",
+                            rating: 4.2
+                        }
+                    ]
+                },
+                "Kovai Medical Center": {
+                    image: "https://www.kmchahs.ac.in/images/page_banner/about-us-mob.jpg",
+                    specialization: ["Cardiology", "Neurology", "Orthopedics"],
+                    doctors: [
+                        {
+                            name: "Dr. John Doe",
+                            experience: "10 years",
+                            education: "MBBS, MD",
+                            areaOfSpecialization: "Cardiology",
+                            patientsAttended: 5000,
+                            workingHours: "9 AM - 5 PM",
+                            rating: 4.5
+                        },
+                        {
+                            name: "Dr. Jane Smith",
+                            experience: "8 years",
+                            education: "MBBS, MS",
+                            areaOfSpecialization: "Orthopedics",
+                            patientsAttended: 3000,
+                            workingHours: "10 AM - 6 PM",
+                            rating: 4.2
+                        }
+                    ]
+                },
+
+                // Add details for other hospitals
+            };
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const hospitalName = urlParams.get('hospital');
+            const city = urlParams.get('city'); // Retrieve city from query parameter
+
+            if (hospitalName && hospitalData.hasOwnProperty(hospitalName)) {
+                const hospital = hospitalData[hospitalName];
+                const hospitalDetailsContainer = document.getElementById("hospitalDetails");
+                hospitalDetailsContainer.innerHTML = "";
+
+                const hospitalImage = document.createElement("img");
+                hospitalImage.id = "hospitalImage"; // Set id for styling
+                hospitalImage.src = hospital.image;
+                hospitalImage.alt = hospitalName + " Image";
+                hospitalDetailsContainer.appendChild(hospitalImage);
+
+                const hospitalTitle = document.createElement("h2");
+                hospitalTitle.textContent = hospitalName;
+                hospitalDetailsContainer.appendChild(hospitalTitle);
+
+                const specializations = document.createElement("p");
+                specializations.textContent = "Specializations: " + hospital.specialization.join(", ");
+                hospitalDetailsContainer.appendChild(specializations);
+
+                hospital.doctors.forEach(doctor => {
+                    const doctorDiv = document.createElement("div");
+                    doctorDiv.classList.add("mt-3", "border", "p-3");
+
+                    const doctorName = document.createElement("h3");
+                    doctorName.textContent = doctor.name;
+                    doctorDiv.appendChild(doctorName);
+
+                    const experience = document.createElement("p");
+                    experience.textContent = "Experience: " + doctor.experience;
+                    doctorDiv.appendChild(experience);
+
+                    const education = document.createElement("p");
+                    education.textContent = "Education: " + doctor.education;
+                    doctorDiv.appendChild(education);
+
+                    const specialization = document.createElement("p");
+                    specialization.textContent = "Area of Specialization: " + doctor.areaOfSpecialization;
+                    doctorDiv.appendChild(specialization);
+
+                    const patientsAttended = document.createElement("p");
+                    patientsAttended.textContent = "Patients Attended: " + doctor.patientsAttended;
+                    doctorDiv.appendChild(patientsAttended);
+
+                    const workingHours = document.createElement("p");
+                    workingHours.textContent = "Working Hours: " + doctor.workingHours;
+                    doctorDiv.appendChild(workingHours);
+
+                    const rating = document.createElement("p");
+                    rating.textContent = "Rating: " + doctor.rating;
+                    doctorDiv.appendChild(rating);
+
+                    const bookAppointmentBtn = document.createElement("button");
+                    bookAppointmentBtn.classList.add("btn", "btn-primary", "me-2");
+                    bookAppointmentBtn.textContent = "Book an Appointment";
+                    bookAppointmentBtn.addEventListener('click', function() {
+                        redirectToAppointment(hospitalName, city, doctor.areaOfSpecialization, doctor.name);
+                    });
+                    doctorDiv.appendChild(bookAppointmentBtn);
+
+                    hospitalDetailsContainer.appendChild(doctorDiv);
+                });
+            } else {
+                alert("Hospital details not found!");
+            }
+        }
+
+        // Function to redirect to appointment page with selected hospital details
+        function redirectToAppointment(hospitalName, city, specialization, doctorName) {
+            // Encode parameters to handle special characters in URL
+            const encodedHospitalName = encodeURIComponent(hospitalName);
+            const encodedCity = encodeURIComponent(city);
+            const encodedSpecialization = encodeURIComponent(specialization);
+            const encodedDoctorName = encodeURIComponent(doctorName);
+
+            // Redirect to appointment page with parameters
+            window.location.href = `appointment.html?hospital=${encodedHospitalName}&city=${encodedCity}&specialization=${encodedSpecialization}&doctor=${encodedDoctorName}`;
+        }
+    </script>
+
+</body>
+
+</html>

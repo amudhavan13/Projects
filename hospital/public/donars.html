@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Donations</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+            background-color: #f8f9fa;
+            background-image: url('https://img.freepik.com/free-vector/clean-medical-background_53876-116877.jpg?w=1480&t=st=1690405410~exp=1690406010~hmac=4872f04289331f8b352ad4d13cbe8dd9bac88b3ad53642d42b3106980729e50f');
+            background-size: cover;
+            margin-top: 0px;
+            color: #fff;
+            background-attachment: fixed;
+            background-position: center;
+    }
+    body {
+        background-color: #f2f2f2;
+        color: black; 
+    }
+    .input-group {
+    margin-bottom: 20px; 
+    }
+    
+    .input-group-append {
+        margin-bottom: 20px; 
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    .details-container {
+        margin-top: 20px;
+    }
+    .card {
+        margin-bottom: 10px;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .input-group {
+        margin-bottom: 10px; 
+    }
+</style>
+<meta charset="utf-8">
+<title>MEDICONNECT</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+<link href="img/favicon.ico" rel="icon">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-fluid py-2 border-bottom d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-decoration-none text-body pe-3" href=""><i class="bi bi-telephone me-2"></i>+91 9843456789</a>
+                        <span class="text-body">|</span>
+                        <a class="text-decoration-none text-body px-3" href=""><i class="bi bi-envelope me-2"></i>mediconnect@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-body px-2" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-body px-2" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-body px-2" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-body px-2" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-body ps-2" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid sticky-top bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>Mediconnect</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+               
+            </nav>
+        </div>
+    </div>
+<div class="container">
+    <h1>Hospital Donations</h1>
+    <div class="btn-container">
+        <button id="bloodBtn" class="btn btn-primary">Blood Donors</button>
+        <button id="organBtn" class="btn btn-primary">Organ Donors</button>
+    </div>
+
+    <div id="bloodDetails" class="details-container">
+        <h2>Blood Donors</h2>
+        <div class="input-group mb-3">
+            <select id="bloodGroup" class="form-control">
+                <option value="all">All Blood Groups</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <div class="input-group-append">
+                <button id="searchBloodBtn" class="btn btn-primary" type="button">Search</button>
+            </div>
+        </div>
+        <div id="bloodDonors" class="details"></div>
+    </div>
+
+    <div id="organDetails" class="details-container">
+        <h2>Organ Donors</h2>
+        <div class="input-group mb-3">
+            <select id="organType" class="form-control">
+                <option value="heart">Heart</option>
+                <option value="kidney">Kidney</option>
+                <option value="liver">Liver</option>
+            </select>
+            <div class="input-group-append">
+                <button id="searchOrganBtn" class="btn btn-primary" type="button">Search</button>
+            </div>
+        </div>
+        <div id="organDonors" class="details"></div>
+    </div>
+</div>
+
+<script>
+    
+    const bloodDonorsData = [
+        { name: "John Doe", bloodGroup: "A+", phoneNumber: "123-456-7890", address: "123 Main St, City" },
+        { name: "Jane Smith", bloodGroup: "B+", phoneNumber: "456-789-0123", address: "456 Elm St, Town" },
+        { name: "Michael Johnson", bloodGroup: "O-", phoneNumber: "789-012-3456", address: "789 Oak St, Village" },
+        
+    ];
+
+    const organDonorsData = {
+        heart: { name: "Alice Johnson", bloodGroup: "O+", phoneNumber: "111-222-3333", address: "111 Elm St, Town" },
+        liver: { name: "Bob Smith", bloodGroup: "A-", phoneNumber: "222-333-4444", address: "222 Oak St, Village" },
+        
+    };
+
+    function displayBloodDonors(bloodGroup) {
+        const bloodDonorsContainer = document.getElementById("bloodDonors");
+        bloodDonorsContainer.innerHTML = "";
+        const filteredDonors = bloodDonorsData.filter(donor => {
+            return bloodGroup === "all" || donor.bloodGroup === bloodGroup;
+        });
+        if (filteredDonors.length === 0) {
+            bloodDonorsContainer.innerHTML = "<p>No donors available for the specified blood group.</p>";
+        } else {
+            filteredDonors.forEach(donor => {
+                const donorCard = document.createElement("div");
+                donorCard.classList.add("card");
+                donorCard.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title">${donor.name}</h5>
+                        <p class="card-text">Blood Group: ${donor.bloodGroup}</p>
+                        <p class="card-text">Phone Number: ${donor.phoneNumber}</p>
+                        <p class="card-text">Address: ${donor.address}</p>
+                    </div>
+                `;
+                bloodDonorsContainer.appendChild(donorCard);
+            });
+        }
+    }
+
+    
+    function displayOrganDonors(organType) {
+        const organDonorsContainer = document.getElementById("organDonors");
+        organDonorsContainer.innerHTML = "";
+        const donorDetails = organDonorsData[organType];
+        if (donorDetails) {
+            const donorCard = document.createElement("div");
+            donorCard.classList.add("card");
+            donorCard.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title">${donorDetails.name}</h5>
+                    <p class="card-text">Blood Group: ${donorDetails.bloodGroup}</p>
+                    <p class="card-text">Phone Number: ${donorDetails.phoneNumber}</p>
+                    <p class="card-text">Address: ${donorDetails.address}</p>
+                </div>
+            `;
+            organDonorsContainer.appendChild(donorCard);
+        } else {
+            organDonorsContainer.innerHTML = "<p>No donors available for the specified organ.</p>";
+        }
+    }
+
+    // Event listeners for search buttons
+    document.getElementById("searchBloodBtn").addEventListener("click", function() {
+        const bloodGroup = document.getElementById("bloodGroup").value;
+        displayBloodDonors(bloodGroup);
+    });
+
+    document.getElementById("searchOrganBtn").addEventListener("click", function() {
+        const organType = document.getElementById("organType").value;
+        displayOrganDonors(organType);
+    });
+
+    // Event listeners for buttons
+    document.getElementById("bloodBtn").addEventListener("click", function() {
+        document.getElementById("bloodDetails").style.display = "block";
+        document.getElementById("organDetails").style.display = "none";
+    });
+
+    document.getElementById("organBtn").addEventListener("click", function() {
+        document.getElementById("organDetails").style.display = "block";
+        document.getElementById("bloodDetails").style.display = "none";
+    });
+
+    document.getElementById("organDetails").style.display = "none";
+
+    document.getElementById("bloodDetails").style.display = "none";
+
+</script>
+</body>
+</html>
