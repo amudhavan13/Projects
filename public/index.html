@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Mgt page</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    header {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .form {
+      padding: 20px;
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    .active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    input,
+    .checkbox {
+      margin-top: 10px;
+    }
+
+    .checkbox label {
+      font-size: 14px;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .toggle-buttons button {
+      width: 45%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .toggle-buttons button:hover {
+      background-color: #45a049;
+    }
+  
+  </style>
+</head>
+<body>
+  <section class="wrapper">
+    <div class="form signup active">
+      <header>Signup</header>
+      <form action="/register" method="post">
+        <input type="text" placeholder="Full name" name="username" required>
+        <input type="email" placeholder="Email address" name="email" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <div class="checkbox">
+          <input type="checkbox" id="signupCheck" required>
+          <label for="signupCheck">I accept all terms & conditions</label>
+        </div>
+        <input type="submit" value="Signup">
+      </form>
+    </div>
+
+    <div class="toggle-buttons">
+      <button id="login-button">Login</button>
+      <button id="signup-button">Signup</button>
+      <button id="update-button">Update</button>
+      <button id="delete-button">Delete</button>
+    </div>
+
+    <div class="form login">
+      <header>Login</header>
+      <form action="/login" method="post">
+        <input type="email" placeholder="Email address" name="email" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <a href="#">Forgot password?</a>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+
+    <div class="form update">
+      <header>Update</header>
+      <form action="/update" method="post">
+        <input type="email" placeholder="Email address" name="email" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <input type="email" placeholder="New email address" name="newEmail" required>
+        <input type="password" placeholder="New password" name="newPassword" required>
+        <input type="submit" value="Update">
+      </form>
+    </div>
+
+    <div class="form delete">
+      <header>Delete</header>
+      <form action="/delete" method="post">
+        <input type="email" placeholder="Email address" name="email" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+  </section>
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.getElementById('login-button');
+    const signupButton = document.getElementById('signup-button');
+    const updateButton = document.getElementById('update-button');
+    const deleteButton = document.getElementById('delete-button');
+    const forms = document.querySelectorAll('.form');
+
+    loginButton.addEventListener('click', function() {
+      forms.forEach(form => form.classList.remove('active'));
+      document.querySelector('.form.login').classList.add('active');
+    });
+
+    signupButton.addEventListener('click', function() {
+      forms.forEach(form => form.classList.remove('active'));
+      document.querySelector('.form.signup').classList.add('active');
+    });
+
+    updateButton.addEventListener('click', function() {
+      forms.forEach(form => form.classList.remove('active'));
+      document.querySelector('.form.update').classList.add('active');
+    });
+
+    deleteButton.addEventListener('click', function() {
+      forms.forEach(form => form.classList.remove('active'));
+      document.querySelector('.form.delete').classList.add('active');
+    });
+  });
+
+</script>
+  
+</body>
+</html>
